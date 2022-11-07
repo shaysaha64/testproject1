@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\wheel.png" />
+    <None Remove="Sounds\click.wav" />
+    <None Remove="Sounds\digital.wav" />
+    <None Remove="Sounds\mellow.wav" />
+    <None Remove="Sounds\rnb.wav" />
+    <None Remove="Sounds\surfers.wav" />
+    <None Remove="Sounds\trap.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="calcsimple\GraphAnimator.txt" />
+    <Compile Include="calcsimple\MainCalc.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="SpeechLib">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>5</VersionMajor>
+      <Guid>e6da930b-bba5-44df-ac6f-fe60c1eddec8</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="images\wheel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Sounds\mellow.wav" />
+    <EmbeddedResource Include="Sounds\digital.wav" />
+    <EmbeddedResource Include="Sounds\click.wav" />
+    <EmbeddedResource Include="Sounds\trap.wav" />
+    <EmbeddedResource Include="Sounds\rnb.wav" />
+    <EmbeddedResource Include="Sounds\surfers.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
+    <PackageReference Include="System.Speech" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
